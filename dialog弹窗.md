@@ -2,29 +2,41 @@
 
 > Dialog 弹窗是一个信息容器窗口，不仅能够展现文本类信息，还可以将复杂的组件包含在窗体内。
 
+> 如果浏览器支持Dialog，将使用原生Dialog获得更好展现；否则会创建一个模拟浮层弹框
+
+
+## Dialog参数 Params
+
+* width 宽度
+* height 高度
+* title 标题
+* content 内容文本
+* needClose 是否需要关闭
+* needCancel 是否需要取消
+* needFooter 是否需要底部按钮
+* ensureText 确定文本
+* cancelText 取消文本
+
 ## 使用说明
 
-- Dialog
+- 弹框 Dialog
     - show(`option`)
     - showModal(`option`)
     - close()
     - hide()
-- InlineDialog 
+
+- 内联弹框 DialogPanel 
     - slot.title
     - slot.content
     - slot.footer
-- Message
+
+- 便捷消息框
     - alert(`msg`, callback) 消息警告
     - comfirm(`msg`, callback, quit) 确认对话框
     - prompt(`msg`, callback) 输入对话框
     - popup(`msg`, callback) 弹出消息（页边）
     - toast(`msg`) 提醒消息 （闪出消息）
 
-## 方法 methods
-
-* 显示弹窗 show
-
-> 窗口位置和大小受到寄生元素限制
 
 
 ```js
@@ -85,15 +97,15 @@ dialog.$on('*', function () {
 ```
 
 
-* 使用InlineDialog
+* 使用DialogPanel
 
-> InlineDialog 使用内容分发方式，使得父子组件通信更加方便
+> DialogPanel 使用内容分发方式，使得父子组件通信更加方便
 
 ```html
 <template>
 <div>
     <h1>使用InlineDialog</h1>
-    <inline-dialog v-ref:"dialog">
+    <dialog-panel v-ref:"dialog">
         <div slot="title">标题</div>
         <div slot="content">
             <form>
@@ -103,14 +115,14 @@ dialog.$on('*', function () {
         <div slot="footer">
             <button @click="submit">确定</button>
         </div>
-    </inline-dialog>
+    </dialog-panel>
 </div>
 </template>
 <script type="text/javascript">
-import InlineDialog from 'smui/InlineDialog'
+import DialogPanel from 'smui/DialogPanel'
 
 export default {
-    components: {InlineDialog},
+    components: {DialogPanel},
     methods: {
         submit () {
             // 子组件直接可以调用submit
