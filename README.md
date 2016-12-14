@@ -1,28 +1,67 @@
-# smui 前端UI组件
-
-> 为神马商搜索前端提供风格、交互、表达一致的前端UI框架
-
-## 组件列表
+## 前端组件列表
 
 ### 容器组件
 
-- 弹窗 [Dialog](#!/demo/Dialog)- 表单 [Form](#!/demo/Form)
+* 弹窗容器 DialogPanel 
+* 表单容器 PostForm
+* 横向滚动 ScrollPanel
 
-### 信息提示
-- 信息框 [Message](#!/demo/Message)- 加载提示 [Loading](#!/smui/Loading)
+### 表格组件
 
-### 列表展示
-- 表格 [Table](#!/demo/Table)- 表格插件 [Table](#!/demo/Table)- 翻页 [Pager](#!/demo/Message)- 自定义列 [CustomList](#!/smui/CustomList)
+* 表格 RichTable
+* 翻页 Pager
 
-### 输入组件
-- 文本输入 [TextBox](#!/smui/TextBox)- 数值输入 [NumberBox](#!/smui/NumberBox)- 行输入框 [LineBox](#!/smui/LineBox)
+### 消息提示
 
-### 选择组件
-- 下拉选择 [Select](#!/smui/Select)- 操作列表 [CommandList](#!/smui/CommandList)- 组选择 [GroupSelect](#!/smui/GroupSelect)
+#### 弹框消息
 
-### 时间日期
-- 单日期选择 [Calendar](#!/demo/Calendar)- 日期范围选择 [DatePicker](#!/demo/Calendar)- 时间规划 [Schedule](#!/demo/Calendar)
+* 弹窗 Dialog
+* 提醒 Dialog.alert
+* 确认 Dialog.comfirm
+* 输入 Dialog.prompt
+* 消息弹入 Dialog.popup
+* 加载提示 Dialog.loading
 
-### 地域选择
-- 多地域选择 [Region](#!/demo/Region)- 单城市选择 [CitySelector](#!/demo/Region)
+#### 浮层消息
+
+* 信息提示 Info
+* 信息微提醒 Toast
+
+### 表单输入元素
+
+#### 选择组件
+
+* 下拉列表（浮层，选择或操作） DropList
+* 选择列表 (原生Select) SelectList
+
+#### 输入框
+
+* 字段输入框（带输入提示和校验） FieldBox
+* 行编辑器 LineBox
+
+### 导航组件
+
+* 树导航 Tree
+* 栏目导航 Tab
+* 面包屑 Scrum
+
+### 高级选择空间
+
+* 单日历 Calendar
+* 日历范围 DatePicker
+* 时段规划 Schedule
+* 地域选择（多地域） Region
+* 单城市选择（多级选择）CitySelector
+* 文件上传 FileUploader
+* 文件下载 FileDownloader
+
+### 辅助控件
+
+* FieldTip 字段校验、提醒
+* validator 字段校验规则 （wali组件）
+
+
+
+
+
 
