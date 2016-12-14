@@ -5,7 +5,9 @@ http://gitlab.alibaba-inc.com/liandong.lld/smui-dev.git
 ## 使用安装
 
 * NPM安装
+
 npm i smui # for vue1.x
+
 npm i msui # for vue2.x
 
 * CDN安装
@@ -17,6 +19,7 @@ http://image.uc.cn/s/uae/g/2p/smui/product/smui-0.0.11.js
 vue init sm-ui/webpack#v1
 
 vue init sm-ui/fis3#v1
+
 
 ## 组件文档（完善中）
 
