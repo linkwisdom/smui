@@ -1,67 +1,35 @@
-## 前端组件列表
+# 前端组件开发代码库
 
-### 容器组件
+http://gitlab.alibaba-inc.com/liandong.lld/smui-dev.git
 
-* 弹窗容器 DialogPanel 
-* 表单容器 PostForm
-* 横向滚动 ScrollPanel
+## 使用安装
 
-### 表格组件
+* NPM安装
+npm i smui # for vue1.x
+npm i msui # for vue2.x
 
-* 表格 RichTable
-* 翻页 Pager
+* CDN安装
 
-### 消息提示
+http://image.uc.cn/s/uae/g/2p/smui/product/smui-0.0.11.js
 
-#### 弹框消息
+## 快速框架搭建
 
-* 弹窗 Dialog
-* 提醒 Dialog.alert
-* 确认 Dialog.comfirm
-* 输入 Dialog.prompt
-* 消息弹入 Dialog.popup
-* 加载提示 Dialog.loading
+vue init sm-ui/webpack#v1
 
-#### 浮层消息
+vue init sm-ui/fis3#v1
 
-* 信息提示 Info
-* 信息微提醒 Toast
+## 组件文档（完善中）
 
-### 表单输入元素
+https://linkwisdom.gitbooks.io/smui/content/
 
-#### 选择组件
+## 组件官网地址 （更新中）
 
-* 下拉列表（浮层，选择或操作） DropList
-* 选择列表 (原生Select) SelectList
+http://image.uc.cn/s/uae/g/2p/smui/index.html#!/demo/Conduct
 
-#### 输入框
+## 使用案例（完善中）
 
-* 字段输入框（带输入提示和校验） FieldBox
-* 行编辑器 LineBox
+* 一个使用ui的管理系统框架
+http://image.uc.cn/s/uae/g/2p/smui/example/index.html
 
-### 导航组件
-
-* 树导航 Tree
-* 栏目导航 Tab
-* 面包屑 Scrum
-
-### 高级选择空间
-
-* 单日历 Calendar
-* 日历范围 DatePicker
-* 时段规划 Schedule
-* 地域选择（多地域） Region
-* 单城市选择（多级选择）CitySelector
-* 文件上传 FileUploader
-* 文件下载 FileDownloader
-
-### 辅助控件
-
-* FieldTip 字段校验、提醒
-* validator 字段校验规则 （wali组件）
-
-
-
-
-
-
+* 使用CDN版本的使用例子
+https://jsfiddle.net/linkwisdom/56L5rvyg/4/
