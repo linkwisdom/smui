@@ -87,9 +87,6 @@ export default {
             this.selected = e.data
             // 也可以直接双向绑定batch.disabled属性，但是不建议这么做
             this.$refs.batch.disabled = e.data.length === 0
-        },
-        op(e) {
-
         }
     },
     components: {
