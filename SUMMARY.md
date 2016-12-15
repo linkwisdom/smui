@@ -5,7 +5,7 @@
 * [组件文档](组件文档.md)
     * [RichTable表格](表格.md)
     * [Dialog弹窗](dialog弹窗.md)
-    * Pager翻页
+    * [Pager翻页](pager翻页.md)
 * [规范与约定](规范与约定.md)
     * [开发规范说明](开发规范说明.md)
     * [组件使用说明](组件使用说明.md)
