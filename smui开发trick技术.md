@@ -28,6 +28,11 @@
   * 在翻页器中，pageSize, pageCount和totalSize几个参数是相互制约的，更新任何参数都需要调用getPages函数，如果顺序不对，可能造成获取的翻页列表是错误的。
   * 使用延迟更新的方法能够避免以上两个问题，比如用setTimeout延迟，在loadash和underscore中有debounce方法可以直接使用。
 
+* **所以要让组件的`v-model`生效，它必须**：
+
+  * 接受一个`value`属性
+  * 在有新的 value 时触发`input`事件
+
 
 
 
