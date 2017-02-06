@@ -8,7 +8,11 @@
 
 npm i smui \# for vue1.x
 
-npm i msui \# for vue2.x
+npm i smui-next \# for vue2.x
+
+npm i smui-souce \# souce code
+
+
 
 * CDN安装
 
@@ -20,15 +24,15 @@ vue init sm-ui/webpack\#v1
 
 vue init sm-ui/fis3\#v1
 
-## 组件文档（完善中）
+## 组件文档
 
 [https://linkwisdom.gitbooks.io/smui/content/](https://linkwisdom.gitbooks.io/smui/content/)
 
-## 组件官网地址 （更新中）
+## 组件官网地址 
 
 [https://sm-ui.github.io/](https://sm-ui.github.io/)
 
-## 使用案例（完善中）
+## 使用案例
 
 * 一个使用ui的管理系统框架  
   [http://image.uc.cn/s/uae/g/2p/smui/example/index.html](http://image.uc.cn/s/uae/g/2p/smui/example/index.html)
