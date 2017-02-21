@@ -1,6 +1,10 @@
 ## 路由的设计
 
-/path/subPath/:params?query
+路由参数结构
+
+> /path/subPath/:params?query
+
+
 
 - 建议1：path/subPath/能够对应功能模块
     - 原因：文件的目录结构清晰，路由规则建档明确
