@@ -2,12 +2,56 @@
 
 路由参数结构
 
-> /path/subPath/:params?query
+> /path/submodule/:params?query
+
+
+
+```js
+
+# /student/score/:name
+
+!#/student/score/:jack?period=201704&subject=english
+
+{ 
+  path: '/student/score',
+  params: {name: 'jack'},
+  query: { period: '201704', subject: 'english'}
+}
+```
 
 
 
 - 建议1：path/subPath/能够对应功能模块
     - 原因：文件的目录结构清晰，路由规则建档明确
+
+
+```sh
+  
+├── datacenter
+├── management
+└── tools
+    ├── AdPreview
+    ├── AppList
+    ├── BatchTask
+    ├── History
+```
+
+** 二级路由结构
+
+```json
+[
+    { path: 'datacenter', component: DataCenter },
+    { path: 'management', component: Management },
+    {
+        path: 'tools',
+        component: Tools,
+        children: [
+            { path: 'AdPreview', component: AdPreview },
+            { path: 'AppList', component: AppList }
+        ]
+    }
+]
+```
 
 - 建议2：如果项目导航结构是多层级，建议使用子路由规则
     - 如果模块少，不存在多级导航，可以用一级别路由
@@ -20,10 +64,53 @@
     - params不如query参数语义不明确
 
 - 建议4: query与store建立映射关系
+    
+    - query是key/value状态信息
+    - 通过全局store组件能够方便获取当前的状态
+
+- 建议5：切换组件的状态保持active
+
+    - 组件的mounted 之前的生命周期不会触发
+    - 切换不同子组件可能引入数据污染（data/class/attr）
 
 
 
+```html
+<transition>
+  <keep-alive>
+    <router-view></router-view>
+  </keep-alive>
+</transition>
+```
 
+
+    
+- 建议6：动态配置路由的情况
+
+    - 需要请求后端修改或添加路由表（芳华创意）
+    - 大部分情况是追加规则，但是规则可能冲突或重复
+    - 可以设置权限（条件）设置
+    - 可以使用动态模块解析
+    - 可以watch($router)
+
+- 建议7：懒加载
+
+
+```js
+const Foo = resolve => {
+  // require.ensure 是 Webpack 的特殊语法，用来设置 code-split point
+  // （代码分块）
+  require.ensure(['./Foo.vue'], () => {
+    resolve(require('./Foo.vue'))
+  })
+}
+```
+
+- 建议8：关注变化
+
+- 监听router对象的befereChange/afterChange钩子
+- 关注组件的beforeRouteEnter/beforeRouteLeave、合理预备与善后
+- 可以watch组件的$route参数变化，响应内容组件
 
 
 ### 其它建议
@@ -35,21 +122,14 @@
 - 视图切换：视图状态保存
 
 
-## 权限控制：通过路由钩子函数和元信息设置权限控制
+## 权限控制
 
-
-
-```eee
-
-```
-
+> 通过路由钩子函数和元信息设置权限控制
 
 
 ```js
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
-    // this route requires auth, check if logged in
-    // if not, redirect to login page.
     if (!auth.loggedIn()) {
       next({
         path: '/login',
