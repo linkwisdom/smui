@@ -2,12 +2,33 @@
 
 ### 认识路由对象
 
-- path
-- params
-- query
-- hash
-- fullPath
-- matched
+- *配置*
+  - path
+  - params
+  - query
+  - hash
+  - fullPath
+  - matched
+  - name
+
+- *实例属性*
+
+  - router.app
+  - router.mode
+  - router.currentRoute
+
+
+- *实例方法*
+
+  - router.beforeEach(guard)
+  - router.afterEach(hook)
+  - router.push(location)
+  - router.replace(location)
+  - router.go(n)
+  - router.back()
+  - router.forward()
+
+### 路由格式
 
 > /path/submodule/:params?query
 
@@ -28,6 +49,9 @@
 
 
 
+
+### 路由格式设计建议
+
 - 建议1：path/subPath/能够对应功能模块
     - 原因：文件的目录结构清晰，路由规则建档明确
 
@@ -43,7 +67,7 @@
     ├── History
 ```
 
-** 二级路由结构
+** 二级路由结构 **
 
 ```json
 [
@@ -85,11 +109,11 @@
 
 
 ```html
-<transition>
-  <keep-alive>
-    <router-view></router-view>
-  </keep-alive>
-</transition>
+  <transition>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
+  </transition>
 ```
 
 
@@ -107,19 +131,21 @@
 
 ```js
 const Foo = resolve => {
-  // require.ensure 是 Webpack 的特殊语法，用来设置 code-split point
-  // （代码分块）
-  require.ensure(['./Foo.vue'], () => {
-    resolve(require('./Foo.vue'))
-  })
+    // （代码分块）
+    // webpack 使用require.ensure
+    // webpack2.0 使用 system.import
+    // fis/AMD模式使用 require(['./Foo.vue'], resolve)
+    require.ensure(['./Foo.vue'], () => {
+        resolve(require('./Foo.vue'))
+    })
 }
 ```
 
 - 建议8：关注变化
 
-- 监听router对象的befereChange/afterChange钩子
-- 关注组件的beforeRouteEnter/beforeRouteLeave、合理预备与善后
-- 可以watch组件的$route参数变化，响应内容组件
+- 监听router对象的`befereEach`/`afterEach`钩子
+- 关注组件的`beforeRouteEnter`/`beforeRouteLeave`、合理预备与善后
+- 可以watch组件的`$route`参数变化，响应内容组件
 
 
 ### 其它建议
@@ -138,17 +164,19 @@ const Foo = resolve => {
 
 ```js
 router.beforeEach((to, from, next) => {
-  if (to.matched.some(record => record.meta.requiresAuth)) {
-    if (!auth.loggedIn()) {
-      next({
-        path: '/login',
-        query: { redirect: to.fullPath }
-      })
+    const needAuth = to.matched.some(
+        record => record.meta.requiresAuth)
+    if (needAuth) {
+        if (!auth.loggedIn()) {
+            next({
+                  path: '/login',
+                  query: { redirect: to.fullPath }
+            })
+        } else {
+            next()
+        }
     } else {
-      next()
+        next() // 确保一定要调用 next()
     }
-  } else {
-    next() // 确保一定要调用 next()
-  }
 })
 ```
