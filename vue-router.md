@@ -1,6 +1,11 @@
 ## 路由的设计
 
-路由参数结构
+### 认识路由对象
+
+- path
+- params
+- query
+- app
 
 > /path/submodule/:params?query
 
@@ -47,7 +52,9 @@
         component: Tools,
         children: [
             { path: 'AdPreview', component: AdPreview },
-            { path: 'AppList', component: AppList }
+            { path: 'AdPreview', component: AdPreview },
+            { path: 'BatchTask', component: BatchTask },
+            { path: 'History', component: History }
         ]
     }
 ]
