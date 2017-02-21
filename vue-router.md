@@ -5,7 +5,9 @@
 - path
 - params
 - query
-- app
+- hash
+- fullPath
+- matched
 
 > /path/submodule/:params?query
 
