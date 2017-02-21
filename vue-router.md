@@ -52,7 +52,7 @@
         component: Tools,
         children: [
             { path: 'AdPreview', component: AdPreview },
-            { path: 'AdPreview', component: AdPreview },
+            { path: 'AppList', component: AdPreview },
             { path: 'BatchTask', component: BatchTask },
             { path: 'History', component: History }
         ]
