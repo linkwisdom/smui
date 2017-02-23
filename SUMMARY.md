@@ -17,4 +17,6 @@
 * [开发日志](开发日志.md)
   * [smui开发trick技术](smui开发trick技术.md)
   * [VUE开发需要了解的坑](vue开发需要了解的坑.md)
-
+* [资源分享](.md)
+  * [Vue-技术堆资源](.md/vue-.md)
+* 
