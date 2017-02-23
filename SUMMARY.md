@@ -7,6 +7,7 @@
   * [Dialog弹窗](dialog弹窗.md)
   * [Pager翻页](pager翻页.md)
   * [输入型组件](inputing-component.md)
+    * [DatePicker](inputing-component/datepicker.md)
 * [开发日志](开发日志.md)
   * [smui开发trick技术](smui开发trick技术.md)
   * [VUE开发需要了解的坑](vue开发需要了解的坑.md)
