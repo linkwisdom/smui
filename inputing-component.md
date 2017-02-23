@@ -8,6 +8,7 @@
 ```
 
 - 输入型组件的特点是组件是一个数据输入源
+- 组件通过`emit`事件`input`，调用组件能够通过`v-model`指令进行数据绑定
 
 ```js
 {
@@ -24,4 +25,12 @@
 }
 
 ```
+
+- 采用`v-model`方式绑定输入组件，最大程度减少重复回调行数的开发
+
+```html
+<data-picker #data-change="changeRawValue"></data-picker>
+```
+
+
 
