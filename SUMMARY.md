@@ -6,19 +6,10 @@
   * [RichTable表格](表格.md)
   * [Dialog弹窗](dialog弹窗.md)
   * [Pager翻页](pager翻页.md)
-* [规范与约定](规范与约定.md)
-  * [开发规范说明](开发规范说明.md)
-  * [组件使用说明](组件使用说明.md)
-  * [组件开发列表](组件开发列表.md)
-  * [开发任务列表](开发任务列表.md)
-  * [组件开发组内讨论](组件开发组内讨论.md)
-  * [开发分支-项目说明](开发分支-项目说明.md)
-  * [vue-router 规范与约定](vue-router.md)
+  * [Inputing-component](inputing-component.md)
 * [开发日志](开发日志.md)
   * [smui开发trick技术](smui开发trick技术.md)
   * [VUE开发需要了解的坑](vue开发需要了解的坑.md)
 * [资源分享](.md)
   * [Vue-技术堆资源](.md/vue-.md)
-
-
 
