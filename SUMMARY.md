@@ -14,4 +14,5 @@
 * [资源分享](.md)
   * [Vue-技术堆资源](.md/vue-.md)
   * [Vuex的思考](.md/vuex.md)
+  * [Semicolons-yes-or-no](.md/semicolons-yes-or-no.md)
 
