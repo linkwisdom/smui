@@ -1,5 +1,7 @@
 ## 路由的设计
 
+> 参考官网[vue-router](https://router.vuejs.org/zh-cn/)
+
 ### 认识路由对象
 
 - *配置*
