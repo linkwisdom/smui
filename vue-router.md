@@ -156,14 +156,13 @@ const Foo = resolve => {
 }
 ```
 
-- 建议8：关注变化
+- 建议8：关注变化,配置转移
 
     - 监听router对象的`befereEach`/`afterEach`钩子
     - 关注组件的`beforeRouteEnter`/`beforeRouteLeave`、合理预备与善后
     - 可以watch组件的`$route`参数变化，响应内容组件
     - 设置alias和replace
-    
-    
+
 ```
     routerConf = [
         { path: '/', replace: '/management' },
