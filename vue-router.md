@@ -107,24 +107,39 @@
     - 切换不同子组件可能引入数据污染（data/class/attr）
 
 
-
 ```html
-  <transition>
-    <keep-alive>
-      <router-view></router-view>
-    </keep-alive>
-  </transition>
+<transition>
+<keep-alive>
+<router-view></router-view>
+</keep-alive>
+</transition>
 ```
 
-
-    
-- 建议6：动态配置路由的情况
-
+- 建议6：使用参数动态控制子视图模块
     - 需要请求后端修改或添加路由表（芳华创意）
     - 大部分情况是追加规则，但是规则可能冲突或重复
     - 可以设置权限（条件）设置
     - 可以使用动态模块解析
     - 可以watch($router)
+
+```js
+    // 路由参数变化驱动子视图变化
+    
+   router.query = {
+       view: 'Report'
+   }
+   
+   // 注册视图组件，通过路由参数控制子视图
+   components: {
+       Report,
+       Editor,
+       TableList
+   }
+```
+
+```html
+    <component is="view"></component>
+```
 
 - 建议7：懒加载
 
@@ -143,9 +158,19 @@ const Foo = resolve => {
 
 - 建议8：关注变化
 
-- 监听router对象的`befereEach`/`afterEach`钩子
-- 关注组件的`beforeRouteEnter`/`beforeRouteLeave`、合理预备与善后
-- 可以watch组件的`$route`参数变化，响应内容组件
+    - 监听router对象的`befereEach`/`afterEach`钩子
+    - 关注组件的`beforeRouteEnter`/`beforeRouteLeave`、合理预备与善后
+    - 可以watch组件的`$route`参数变化，响应内容组件
+    - 设置alias和replace
+    
+    
+```
+    routerConf = [
+        { path: '/', replace: '/management' },
+        { path: 'app', alias: '/app/kr' },
+        { path: 'tools/:name', replace: to => {jump(to)}}
+    ]
+```
 
 
 ### 其它建议
